@@ -1,0 +1,114 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background:
+        radial-gradient(circle at 50% 50%,
+            #5e4165 0, #523561 16.67%,
+            #432a5d 33.33%,
+            #321f59 50%,
+            #1b1656 66.67%,
+            #000e53 83.33%,
+            #000350 100%);
+}
+
+.clock {
+    width: 50rem;
+    height: 50rem;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url(../img/hours.png);
+    background-size: cover;
+    background-color: rgba(0, 0, 0, 0.2);
+    box-shadow:
+        2px -5px rgba(255, 255, 255, 0.05),
+        inset 2px -5px 5px rgba(255, 255, 255, 0.05),
+        40px 40px 40px rgba(0, 0, 0, 0.3),
+        inset 2px 5px 5px rgba(0, 0, 0, 0.3);
+}
+
+.clock::before
+{
+    content: '';
+    position: absolute;
+    width: 1.5rem;
+    height: 1.5rem;
+    background: #fff;
+    border-radius: 50%;
+    z-index: 1000;
+}
+
+.clock .hour,
+.clock .minutes,
+.clock .seconds
+{
+    position: absolute;
+    transform-origin: bottom center;
+
+}
+
+.clock .hour, .hr
+{
+    width: 100px;
+    height: 500px;
+}
+
+.clock .minutes, .mn
+{
+    width: 100px;
+    height: 600px;
+}
+
+.clock .seconds, .sec
+{
+    width: 80px;
+    height: 80px;
+}
+
+.hr, .mn, .sec
+{
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    border-radius: 50%;
+}
+
+.hr::before
+{
+    content:'' ;
+    position: absolute;
+    width: 6px;
+    height: 300px;
+    background-color: rgb(255, 255, 255);
+    z-index: 10;
+    border-radius: 6px 6px 0;
+}
+.mn::before
+{
+    content:'' ;
+    position: absolute;
+    width: 10px;
+    height: 350px;
+    background-color: rgb(192, 192, 292);
+    z-index: 11;
+    border-radius: 6px 6px 0;
+}
+.sec::before
+{
+    content:'' ;
+    position: absolute;
+    width: 4px;
+    height: 300px;
+    background-color: rgb(255, 0, 0);
+    z-index: 12;
+    border-radius: 6px 6px 0;
+}
